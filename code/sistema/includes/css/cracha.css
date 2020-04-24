@@ -1,0 +1,83 @@
+.card{
+    border-top: #000 4px solid;
+    border-left:#000 4px solid;
+    border-right: #000 4px solid;
+    width: 6cm;
+    height: 8cm;
+}
+.left{
+    float: left;
+}
+.right{
+    float:none;
+}
+.center{
+    text-align: center;
+}
+
+.surdo{
+    margin-left: 2.5cm;
+    width: 2cm;
+    height: 2cm;
+}
+
+.foto{
+    margin-top: 10px;
+    margin-left: 25%;
+    border: #000 1px solid;
+    width: 3cm;
+    height: 2,5cm;
+    background-color: #ffffff;
+}
+.dadosPessoais{
+    text-align: center;
+    height: 4cm; /*quando houver foto, aumentar para 5 cm*/
+}
+.tipoInscricao{
+    font-family: "arial";
+    font-weight:bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 1px;
+}
+.voluntario{
+    background-color: #001f60;
+    padding: 20px;
+}
+.participante{
+    background-color: #1e3312;
+}
+.pastor{
+    background-color: #B22222;
+}
+.nome{
+    font-family: "haveltica";
+    font-size: 12px;
+    font-weight:bold;
+    text-align: center;
+    margin-top: 5px;
+}
+.dadosIgreja{
+    margin-top: 5px;
+    text-align: center;
+    margin-left: 5px;
+    font-family: "haveltica";
+    font-style: italic;
+    font-size: 10px;
+}
+.dadosIgreja label{
+    font-size: 15px;
+}
+.dadosIgreja span{
+    font-size: 20px;
+    font-weight:bold;
+    text-align: center;
+}
+.barcode{
+    text-align: center;
+    padding: 3px;
+}
+.rodape{
+    text-align: center;
+    padding: 10px;
+}

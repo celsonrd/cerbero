@@ -1,0 +1,166 @@
+#header{
+	/* width: 100%; */
+	height: 10px;
+	font-size: 18px;
+	text-align: center;  
+	
+	font-family: "Times New Roman", Times, serif;
+	padding: 0px 0px 20px 0px; 
+
+}
+#header figure{
+	width: 200px;
+	height: auto;
+    float: left;
+    vertical-align: top;
+}
+#header_content{
+    float: right;
+    text-align: right;
+	vertical-align: text-bottom;
+	padding: 10cm 10cm 10cm;
+}
+
+#footer{
+	width: 100%;
+	height: 40px;
+	font-size: 12px;
+	text-align: center;
+}
+.img_header{
+    width: 200px;
+    height:auto;
+}
+.texto-header{
+    font-size: 25px;
+}
+
+.imgfooter{
+	margin-left:40%;
+	margin-right: 40%;
+	text-align: center;
+	width: 20%;
+	height: auto;
+}
+.subheader{
+	text-align: center;
+	font-weight:bold;
+	font-size: 18px;
+}
+.corpo{
+	margin-top: 20px;
+        margin-bottom: 20px;
+}
+/*alinhamento*/
+.justify{
+	text-align: justify;
+}
+.center{
+	text-align: center;
+}
+.right{
+	text-align: right;
+}
+.left{
+    text-align: left;
+}
+
+
+
+
+
+
+
+/*configuracoes de tabela*/
+.table-border-1{
+	width: 100%;
+	border:#00000 1px solid;
+	border-collapse: collapse;
+        padding: 3px;
+}
+.table-border-1 tr td{
+	border:#000000 1px solid;
+        padding: 3px;
+}
+.table-border-red-1{
+	width: 100%;
+	border:#f78688 1px solid;
+	border-collapse: collapse;
+        padding: 3px;
+}
+.table-border-red-1 tr td{
+	border:#f78688 1px solid;
+        padding: 3px;
+}
+.table-border-0 {
+	border:#000000 0px solid;
+        
+}
+.table-border-0 tr td{
+	border:#000000 0px solid;
+        padding: 3px;
+}
+
+
+
+
+
+/*cabecalho de tabela*/
+.bg-row-red{
+	color:#FFFFFF;
+	background-color: #f78688;
+	font-weight:bold;
+        padding: 5px;
+}
+.bg-row-red td {
+    color:#FFFFFF;
+    font-weight:bold;
+    padding: 5px;
+}
+.bg-row-cinza{
+	color:#FFFFFF;
+	background-color: #c0c0c0;
+	font-weight:bold;
+}
+.bg-row-cinza td {
+    color:#FFFFFF;
+    font-weight:bold;
+}
+/*cores de fundo */
+.bg-cinza{
+    background-color: #c0c0c0;
+}
+.bg-verde{
+    background-color: #99cc32;
+}
+.bg-amarelo{
+    background-color: #f3faa6;
+}
+.bg-vermelho{
+    background-color: #ffe4e1;
+}
+.bg-aqua{
+    background-color: #add8e6;
+}
+.bg-row-cyan{
+    background-color: #f5f5ff;
+}
+/*texto*/
+.text-aqua{
+    color: #006dcc;
+}
+.text-mini {
+    font-size: 12px;
+    font-style: italic;
+}
+.text-red{
+    color: #900;
+}
+
+/*classes das etiquetas do codigos de barras */
+
+.etiqueta{
+    width: 200px;
+    border:#000000 1px solid;
+    font-size: 10px;
+}

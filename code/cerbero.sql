@@ -1,0 +1,653 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.6deb4
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:3306
+-- Generation Time: Mar 23, 2020 at 04:26 PM
+-- Server version: 10.1.44-MariaDB-0+deb9u1
+-- PHP Version: 7.0.33-0+deb9u7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `cerbero`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `local`
+--
+
+CREATE TABLE `local` (
+  `id` int(5) NOT NULL,
+  `local` varchar(30) NOT NULL,
+  `responsavel` varchar(30) NOT NULL,
+  `id_pai` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `local`
+--
+
+INSERT INTO `local` (`id`, `local`, `responsavel`, `id_pai`) VALUES
+(1, 'QG 10ª Bda Inf Mtz', '-', NULL),
+(3, 'Cia Cmdo ', 'Maj Cmt', NULL),
+(4, '10º Pel PE', 'Ten Cmt', NULL),
+(5, 'Cmdo 10ª Bda Inf Mtz', 'General de Brigada', NULL),
+(6, 'SECINFOR', 'MAJ JOLSON', NULL),
+(7, '1ª SEÇÃO', 'CEL SILVÉRIO', NULL),
+(8, '2ª SEÇÃO', 'MAJ DOUGLAS', NULL),
+(9, '3ª SEÇÃO', 'MAJ MATIAS', NULL),
+(10, '4ª SEÇÃO', 'MAJ REIS', NULL),
+(11, '5ª SEÇÃO', 'MAJ SALVIANO', NULL),
+(12, 'ASSESSORIA JURIDICA', 'TEN BRANDÃO', NULL),
+(13, 'SALC', 'TEN FORTE', NULL),
+(14, 'TESOURARIA', 'TEN SOUZA NETO', NULL),
+(15, 'CONFORMIDADE DOCUMENTAL', 'ST J ROBERTO', NULL),
+(16, 'ORDENADOR DE DESPESA', 'TC OLIVEIRA JUNIOR', NULL),
+(17, 'SEÇÃO DE PAGAMENTO DE PESSOAL', 'TEN SILVA', NULL),
+(18, 'FISCALIZAçãO ADMINISTRATIVA', 'TC OLIVEIRA ROSA', NULL),
+(19, 'ALMOX', 'TEN DARLEY', NULL),
+(20, 'APROVISIONAMENTO', 'TEN WYVISON', NULL),
+(21, 'CASA 29 - IRENE GOMES', 'IRENE GOMES DO ARAGãO', NULL),
+(22, 'CASA 31 - MARIA JOSEFA', 'MARIA JOSEFA GOMES COUTINHO', NULL),
+(23, 'CASA 32 - ENÉAS LOURENÇO', 'ENÉAS LOURENÇO DOS SANTOS', NULL),
+(24, 'CASA 33 - JOSE MARIA', 'JOSE MARIA DO NASCIMENTO', NULL),
+(25, 'CASA 37 - MARINA BERNADETE', 'MARINA BERNADETE RIBEIRO GOMES', NULL),
+(26, 'CASA 38 - ANDREA SEVERINA', 'ANDREA SEVERINA DE FRANçA', NULL),
+(27, 'CASA 40 - FERNANDO FRANÇA', 'FERNANDO FRANÇA DA SILVA', NULL),
+(28, 'CASA 42 - IZABEL CRISTINA ', 'IZABEL CRISTINA DE ALMEIDA', NULL),
+(29, 'CASA 43 - PAULO GOMES', 'PAULO GOMES DA LUZ', NULL),
+(30, 'CASA 63 - MARIA DE SOUZA', 'MARIA DE SOUZA OLIVEIRA BACELA', NULL),
+(31, 'PNR 01 - TC SILVÉRIO', 'TC SILVERIO', NULL),
+(32, 'PNR 03 - TEN RENNAN NEVES', 'RENNAN GUILHERME NEVES', NULL),
+(33, 'PNR 10 - SGT MARCOS', 'SGT MARCOS', NULL),
+(36, 'PNR 03 - TEN RENNAN NEVES', 'TEN RENNAN NEVES', NULL),
+(37, 'PNR 04 - SGT BARBOSA', 'SGT BARBOSA', NULL),
+(38, 'PNR 06 - SGT ARRUDA', 'SGT ARRUDA', NULL),
+(39, 'PNR 07 - SGT BARBOSA', 'SGT BARBOSA', NULL),
+(40, 'PNR 08 - SGT GOMES DE QUEIROZ', 'SGT GOMES DE QUEIROZ', NULL),
+(42, 'PNR 14 - ST REINALDO', 'ST REINALDO', NULL),
+(43, 'PNR 15 - SGT FELICIANO', 'SGT FELICIANO', NULL),
+(44, 'PNR 22 - SGT CAMPOS', 'SGT CAMPOS', NULL),
+(45, 'PNR 23 - ST OSEAS', 'ST OSEAS', NULL),
+(46, 'PNR 25 - SGT FIDELIS', 'SGT FIDELIS', NULL),
+(47, 'PNR 26 - SGT GRAZIANE', 'SGT GRAZIANE', NULL),
+(48, 'PNR 48 - TEN GERCIMAR', 'TEN GERCIMAR', NULL),
+(49, 'PNR 53 - ST FELTRIN', 'ST FELTRIN', NULL),
+(50, 'PNR 54 - SGT WALTERE', 'SGT WALTERE', NULL),
+(51, 'PNR 55 - ST S VIEIRA', 'ST S VIEIRA', NULL),
+(52, 'PNR 56 - ST VILELA', 'ST VILELA', NULL),
+(53, '5º CTA', '5º CTA', NULL),
+(54, 'SFPC', 'CEL EVANDRO', NULL),
+(55, 'CASA 02 - EM OBRAS', 'FISCAL ADMINISTRATIVO', NULL),
+(56, 'CASA 01 - EM OBRAS', 'FISCAL ADMINISTRATIVO', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `militar`
+--
+
+CREATE TABLE `militar` (
+  `id_mil` int(10) NOT NULL,
+  `cpf` varchar(20) NOT NULL,
+  `grd` varchar(20) NOT NULL,
+  `nome_mil` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `militar`
+--
+
+INSERT INTO `militar` (`id_mil`, `cpf`, `grd`, `nome_mil`) VALUES
+(5, '014.339.494-07', 'CB', 'RODRIGUES'),
+(6, '212.234.545-69', '2 TEN', 'GIORDANI'),
+(7, '610.791.624-53', '2 SGT', 'MARCOS SEVERINO DA SILVA'),
+(8, '999.999.999-99', 'CEL', 'ANTONIO CARLOS DA SILVA ROLIM IVO'),
+(9, '999.999.999-99', 'CEL', 'JORGE ALBERTO MACHADO DE SOUZA'),
+(10, '999.999.999-99', 'CEL', 'EVANDRO DE MELO VIEIRA'),
+(11, '999.999.999-99', 'CEL', 'PAULO ROBERTO TAVARES NASCIMENTO'),
+(12, '999.999.999-99', 'CEL', 'ANTONIO AIRTON ROCHA PONTES'),
+(13, '999.999.999-99', 'TEN CEL', 'LUÍS CLÁUDIO BOTELHO DE LUCENA'),
+(14, '999.999.999-99', 'TEN CEL', 'CARLOS ALBERTO DE OLIVEIRA JUNIOR'),
+(15, '999.999.999-99', 'TEN CEL', 'ALEXANDRE OLIVEIRA DA ROSA'),
+(16, '999.999.999-99', 'TEN CEL', 'CARLOS JOSÉ DE OLIVEIRA SILVERIO'),
+(17, '999.999.999-99', 'MAJ', 'ANDRE LUIS DA COSTA BRANDÃO'),
+(18, '999.999.999-99', 'MAJ', 'CARLOS HUMBERTO FEITOSA MUNIZ'),
+(19, '999.999.999-99', 'MAJ', 'DOUGLAS DOS SANTOS LEITE'),
+(20, '999.999.999-99', 'MAJ', 'HELTON MATIAS FERREIRA DA SILVA'),
+(21, '999.999.999-99', 'MAJ', 'JOLSON EMILIO DE SANTANA TENÓRIO'),
+(22, '999.999.999-99', 'MAJ', 'GUSTAVO MOREIRA MATHIAS'),
+(23, '999.999.999-99', 'MAJ', 'ROBERTO WAGNER MONTEIRO DOS SANTOS'),
+(24, '999.999.999-99', 'MAJ', 'LUIZ VINICIUS DE MIRANDA REIS'),
+(25, '999.999.999-99', 'MAJ', 'HUMBERTO BATISTA RODRIGUES JUNIOR'),
+(26, '999.999.999-99', 'MAJ', 'PABLO NEVES SALVIANO DE LUCENA'),
+(27, '999.999.999-99', 'CAP', 'CAROLINE VASCONCELLOS MARTINS'),
+(28, '999.999.999-99', 'CAP', 'JOSÉ JOSIVAL DA SILVA'),
+(29, '999.999.999-99', 'CAP', 'PEDRO MIGUEL DOS ANJOS'),
+(30, '999.999.999-99', 'CAP', 'JOSÉ ROBSON PEREIRA DA SILVA'),
+(31, '999.999.999-99', '1 TEN', 'PAULO VICTOR BRANDÃO VANDERLEI DE ARAUJO'),
+(32, '999.999.999-99', '1 TEN', 'DANLEY FRANCISCO DO NASCIMENTO'),
+(33, '999.999.999-99', '1 TEN', 'RODRIGO GONZAGA DA SILVA FORTE'),
+(34, '999.999.999-99', '1 TEN', 'RENNAN GUILHERME NEVES'),
+(35, '999.999.999-99', '1 TEN', 'RAIMUNDO ARAÚJO DE SOUZA NETO'),
+(36, '999.999.999-99', '2 TEN', 'CLAUDIA MARLETTI CIRNE DE AZEVEDO'),
+(37, '999.999.999-99', '2 TEN', 'GERCIMAR DANTAS'),
+(38, '052.618.774-31', '2 TEN', 'GIORDANI COSTA DE OLIVEIRA'),
+(39, '999.999.999-99', '1 TEN', 'RENATA GRINFELD'),
+(40, '999.999.999-99', '2 TEN', 'SERGIO ANDRE SILVA DO NASCIMENTO'),
+(41, '999.999.999-99', '2 TEN', 'UIARA NANA RODRIGUES DOS SANTOS'),
+(42, '999.999.999-99', '2 TEN', 'TIAGO BUARQUE VALENÇA'),
+(43, '999.999.999-99', '2 TEN', 'WYVISON BARBPSA DA SILVA'),
+(44, '999.999.999-99', 'S TEN', 'JOILSON MARCIO LUCENA DE MEDEIROS'),
+(45, '999.999.999-99', 'S TEN', 'J OLIVEIRA'),
+(46, '999.999.999-99', 'S TEN', 'JOSÉ ROBERTO RODRIGUES DE SOUSA'),
+(47, '999.999.999-99', 'S TEN', 'MURILO DE MACEDO MOALLA'),
+(48, '999.999.999-99', 'S TEN', 'SERGIO DO NASCIMENTO DA COSTA'),
+(49, '999.999.999-99', 'S TEN', 'OSEAS DA SILVA'),
+(50, '999.999.999-99', 'S TEN', 'REINALDO OLIVEIRA DA SILVA'),
+(51, '999.999.999-99', 'S TEN', 'JEFFERSON FRANCISCO DA SILVA'),
+(52, '999.999.999-99', 'S TEN', 'PAULO SALINO VIEIRA'),
+(53, '999.999.999-99', 'S TEN', 'VAGNER TARCISO'),
+(54, '999.999.999-99', 'S TEN', 'ROSENILDO VILELA DE LIMA'),
+(55, '999.999.999-99', '1 SGT', 'NAZÁRIO BARBOSA DE SOUZA'),
+(56, '999.999.999-99', '1 SGT', 'DOUGLAS BARBOSA DA SILVA'),
+(57, '999.999.999-99', '1 SGT', 'RENATO AUGUSTO BARROS MENDES'),
+(58, '999.999.999-99', '1 SGT', 'ALEXANDRE GOMES DA SILVA'),
+(59, '999.999.999-99', '1 SGT', 'HUMBERTO EDUARDO DOS SANTOS'),
+(60, '999.999.999-99', 'S TEN', 'MARCELO FERREIRA DOS SANTOS'),
+(61, '999.999.999-99', '1 SGT', 'ELIAS JOSÉ DE SANTANA'),
+(62, '999.999.999-99', '2 SGT', 'PLINIO ROGERIO BARROCA'),
+(63, '999.999.999-99', '2 SGT', 'JOSE MARCELO ALVES BRASILEIRO'),
+(64, '999.999.999-99', '2 SGT', 'EDISON AROXA DO NASCIMENTO FILHO'),
+(65, '999.999.999-99', '2 SGT', 'EVALDO LUIZ DOS SANTOS JUNIOR'),
+(66, '999.999.999-99', '2 SGT', 'LEONARDO GOMES DE QUEIROZ'),
+(67, '999.999.999-99', '2 SGT', 'HILQUIAS GALDINO DA SILVA'),
+(68, '999.999.999-99', '2 SGT', 'MARCOS SEVERINO DA SILVA'),
+(69, '999.999.999-99', '2 SGT', 'PEDRO MIGUEL DOS ANJOS FILHO'),
+(70, '999.999.999-99', '2 SGT', 'ROBERTO RODINERS DA SILVA'),
+(71, '999.999.999-99', '2 SGT', 'VINICIUS VIEIRA DE LIMA SALES'),
+(72, '999.999.999-99', '3 SGT', 'CASSIO DE MENDONÇA LIMA'),
+(73, '999.999.999-99', '3 SGT', 'DALTON SANTOS DE SOUZA'),
+(74, '999.999.999-99', '3 SGT', 'KAREM KESSIA DA SILVA SANTOS'),
+(75, '999.999.999-99', '3 SGT', 'IZABELLE KAREN DE SANTANA ARAÚJO FARIAS'),
+(76, '999.999.999-99', '3 SGT', 'KETIMA FERREIRA DA SILVA'),
+(77, '999.999.999-99', '3 SGT', 'GUTEMBERG GOMES DORIA MACHADO'),
+(78, '999.999.999-99', '3 SGT', 'THULIO MARIANO LIMA DE ASSUNÇÃO'),
+(79, '999.999.999-99', '3 SGT', 'KLEITON MARTINS DA SILVA'),
+(80, '999.999.999-99', '3 SGT', 'MAX NEVES ANTONIO JUNIOR'),
+(81, '999.999.999-99', '3 SGT', 'PEDRO HENRIQUE DOS SANTOS'),
+(82, '999.999.999-99', '3 SGT', 'IGOR SILVA DE QUEIROZ BEZERRA'),
+(83, '999.999.999-99', '3 SGT', 'RAFAEL HENRIQUE REAL'),
+(84, '999.999.999-99', '3 SGT', 'MARCOS AURELIO RIBEIRO DE OLIVEIRA'),
+(85, '999.999.999-99', '3 SGT', 'JOSE STÊNIO CLIMACO LINS');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(10) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `senha` varchar(100) NOT NULL,
+  `funcao` int(1) NOT NULL,
+  `status` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `funcao`, `status`) VALUES
+(21, 'COMANDANTE DA GUARDA', 'cmtgda', 'b150750bdaf48fc3be3e0959ac2977f3', 1, 1),
+(22, 'CB RODRIGUES', 'rodrigues', '2c8378c0a44178e3deea01fd314d4c9e', 1, 1),
+(23, '2º TEN GIORDANI', 'giordani', '6275e5d43f164ad9167628cd18ded071', 1, 1),
+(24, '3º SGT RIBEIRO', 'ribeiro', 'e3e46bfa662c32af38baaf5f1705ecb8', 1, 1),
+(25, '2º SGT MARCOS', 'marcos', 'c5e3539121c4944f2bbe097b425ee774', 1, 1),
+(26, 'ALEXANDRE SEVERINO DA SILVA', '', 'd41d8cd98f00b204e9800998ecf8427e', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `veiculos`
+--
+
+CREATE TABLE `veiculos` (
+  `id_veiculo` int(5) NOT NULL,
+  `tipo` int(1) NOT NULL COMMENT '1-carro;2-moto',
+  `id_mil` int(10) DEFAULT NULL,
+  `id_visitante` int(10) DEFAULT NULL,
+  `marca` varchar(30) NOT NULL,
+  `modelo` varchar(30) NOT NULL,
+  `cor` varchar(30) NOT NULL,
+  `placa` varchar(7) NOT NULL,
+  `venc_crlv` varchar(10) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `veiculos`
+--
+
+INSERT INTO `veiculos` (`id_veiculo`, `tipo`, `id_mil`, `id_visitante`, `marca`, `modelo`, `cor`, `placa`, `venc_crlv`, `status`) VALUES
+(1, 1, NULL, 36, 'FIAT', 'SIENA', 'CINZA', 'PFY9805', NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visitantes`
+--
+
+CREATE TABLE `visitantes` (
+  `id` int(5) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `cpf` varchar(14) NOT NULL,
+  `sexo` varchar(1) NOT NULL,
+  `idMil` varchar(15) DEFAULT NULL,
+  `rg` varchar(20) DEFAULT NULL,
+  `dn` varchar(10) DEFAULT NULL,
+  `fone` varchar(15) DEFAULT NULL,
+  `foto` varchar(1500) DEFAULT NULL,
+  `omOrigem` varchar(20) DEFAULT NULL,
+  `idMilResp` varchar(20) DEFAULT NULL COMMENT 'id do militar da OM no sisbol',
+  `nomeMilRespRes` varchar(30) DEFAULT NULL COMMENT 'nome do militar responsavel se for da reserva',
+  `acessoLivre` tinyint(1) NOT NULL DEFAULT '0',
+  `solicita_autorizacao` int(1) DEFAULT NULL COMMENT 'TRUE se cadastro entiver preenchido aguardando liberação da 2ª seção',
+  `fim_acesso_livre` varchar(30) DEFAULT NULL,
+  `id_local_acesso` int(1) DEFAULT NULL,
+  `alerta` int(1) NOT NULL DEFAULT '0',
+  `motivoAlerta` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `visitantes`
+--
+
+INSERT INTO `visitantes` (`id`, `nome`, `cpf`, `sexo`, `idMil`, `rg`, `dn`, `fone`, `foto`, `omOrigem`, `idMilResp`, `nomeMilRespRes`, `acessoLivre`, `solicita_autorizacao`, `fim_acesso_livre`, `id_local_acesso`, `alerta`, `motivoAlerta`) VALUES
+(13, 'alex antonio da silva', '108.639.114-47', 'M', '', '8148164', '28/03/1990', '(81) 98588-7872', '../fotos/5e6a35fc57a50.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(14, 'Artur Souza Pessoa', '034.810.894-06', 'M', '', '4376399', '16/09/1977', '(81) 98826-0555', '../fotos/5e6b6dfa09cee.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(15, 'LUCIAN HELAN DE ANDRADE SANTOS', '999.999.999-99', 'M', '', '6391400097 MT PE', '29/01/1989', '(81)99999-8444', NULL, '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(16, 'Valdicelio Soares', '062.900.154-51', 'M', '', '5704157', '17/03/1980', '(81) 98488-0509', '../fotos/5e6b7bb02bc40.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(17, 'Natam da Silva Correia', '809.551.694-53', 'M', '', '3846145', '18/07/1973', '(81) 98456-9189', '../fotos/5e6b7ddaaf0e5.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(18, 'Mariano José da Silva', '867.198.904-68', 'M', '', '4419354', '27/05/1975', '(81) 98876-5235', '../fotos/5e6b8199155f9.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(19, 'Marivaldo  Eloi de Paula', '770.342.524-91', 'M', '', '41619', '03/11/1072', '(81) 98494-4431', '../fotos/5e6b8f0260426.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(20, 'Andson Oliveira dos Santos', '078.891.994-65', 'M', '', '7052287', '27/01/1988', '(81) 98844-1829', '../fotos/5e6b921d662f3.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(21, 'Jean Gama de Souza Carvalho', '616.504.474-34', 'M', '', '3933452', '20/08/1973', '(81) 98714-0866', '../fotos/5e6ba9303f51c.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(22, 'Ewerthon Vitorino de Arruda', '043.767.444-41', 'M', '', '58060', '15/07/1983', '(81) 99900-0057', '../fotos/5e6bb0302ec02.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(23, 'Julio Alves Camelo', '103.435.034-09', 'M', '', '8275572', '10/11/1994', '(81) 98592-3621', '../fotos/5e6bb80ea87c7.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(24, 'PAULO ANDRé BATISTA', '034.100.404-98', 'M', '', '5225363', '15/05/1980', '(81)98706-9308', NULL, '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(25, 'Moacir Joaquim da Silva', '030.075.084-60', 'M', '', '5410345', '22/01/1977', '(81) 98411-3737', '../fotos/5e6bba610ecb4.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(26, 'Lucio Willy Santos Silva', '702.356.814-07', 'M', '', '7705900120', '23/11/1996', '(81) 98413-5516', '../fotos/5e6bc60fa25c4.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(27, 'Daniel Barbosa de Lima', '025.481.124-89', 'M', '', '4681015', '02/11/1976', '(81) 98740-1417', '../fotos/5e6cad44312c6.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(28, 'Jose Maria Castanheira Neto', '045.593.064-35', 'M', '', '6346643', '30/01/1984', '(81) 98685-9969', '../fotos/5e6cbdeb7dd57.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(29, 'Daci Araujo De Azevedo', '762.066.374-68', 'M', '122706430', '0112026745', '08/05/1970', '(81) 99879-0678', NULL, '4 B COM', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(30, 'Daci Araujo De Azevedo', '762.___.___-__', 'M', '122706430', '0112026745', '08/05/1997', '(81) 99879-0978', '../fotos/5e6cda42d6f15.jpeg', '4 B COM', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(31, 'Rinaldo Mendes Fagundes', '054.215.014-00', 'M', '', '6315909 ssp pe', '26/02/1985', '(81) 98939-4196', '../fotos/5e6ceaf32295f.jpeg', '', '', NULL, 1, NULL, '', 21, 0, NULL),
+(32, 'IEDA CRISTINA CRUZ CUNHA', '963.713.584-72', 'F', '', '4846770', '09/11/1972', '(81) 98899-5608', '../fotos/5e6cf8c393bcf.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(33, 'MARIA CRISTINA MENDES', '462.777.734-53', 'F', '', '3236080', '14/07/1967', '(81) 99559-6340', '../fotos/5e6cfc9cd0999.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(34, 'EDILSON SEVERINO DA SILVA', '631.621.054-04', 'M', '', '2878706', '14/04/1969', '(81) 99953-1344', '../fotos/5e6d00ea8640b.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(35, 'ANA MARIA DOS SANTOS CARDOSO', '880.461.844-20', 'M', '', '4532503', '06/04/1973', '(81) 98604-7196', '../fotos/5e6d117b0e8af.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(36, 'Israel Eduardo Paraibano', '869.269.884-34', 'M', '', '4232766', '13/10/1973', '(81) 99607-2700', NULL, '', '', NULL, 1, NULL, '16/03/2020', 1, 0, NULL),
+(37, 'Israel Eduardo Paraibano', '869.268.884-34', 'M', '', '4232766', '12/10/1973', '(81) 99607-2700', '../fotos/5e6f480654785.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(38, 'Manoel Sebastião da Silva', '058.817.874-80', 'M', '', '8028637', '30/08/1989', '(81) 98155-2084', '../fotos/5e6f49620e3b0.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(39, 'Alexandre Severino da Silva', '029.144.694-97', 'M', '', '5310579', '30/09/1975', '(81) 98736-8643', '../fotos/5e6f511c1c6e2.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(40, 'Carlos Eduardo Costa Lima Moreira', '106.045.694-08', 'M', '', '8712815', '27/03/1992', '(81) 99727-6516', '../fotos/5e6f542ddebc1.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(41, 'Marcio Gomes da Silva', '073.758.464-56', 'M', '', '6761785', '20/01/1986', '(81) 99757-3938', '../fotos/5e6f58ee1c2ca.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(42, 'Tony Lamark Bezerra Leite', '008.559.864-09', 'M', '', '2226324', '07/12/1977', '(83) 99970-9462', '../fotos/5e6f5a17d372e.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(43, 'RENNE ELTON DE AMORIM CORREIA', '099.326.814-58', 'M', '', '7183799', '05/05/1991', '(81) 98359-9334', '../fotos/5e6f6895718f4.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(44, 'FRANCISCO DE ASSIS ALMEIDA', '267.108.114-69', 'M', '', '26779518', '13/10/1959', '(81) 98338-7118', '../fotos/5e6f753af1fcc.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(45, 'INALDOBARBOSA JANUARIO', '095.914.844-29', 'M', '', '8538792', '05/05/1992', '(81) 99848-0154', '../fotos/5e6fa611309ea.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(46, 'MAURICIO MENDES CAVALCANTI ', '377.940.604-78', 'M', '', '2282789', '15/09/1964', '(81) 98787-0766', '../fotos/5e6fbcf01c3b8.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(47, 'FÁBIO HENRIQUE SEABRA DO NASCIMENTO', '093.234.784-31', 'M', '', '8228390', '12/02/1992', '(81) 99870-9978', '../fotos/5e6fc37dddbe7.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(48, 'HILARIO BESERRA DE VASCONCELOS', '178.274.774-53', 'M', '', '1386495', '14/01/1957', '(87) 98656-8349', '../fotos/5e6fc4557cc62.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(49, 'ADRIANA NERY MARQUES FERREIRA', '061.139.974-13', 'F', '', '6876710', '23/02/1987', '(81) 98349-3950', '../fotos/5e6fdd5b001e3.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(50, 'JOSUÉ PEDRO DA SIVA', '619.918.134-49', 'M', '0725229348', '', '20/10/73__', '(81) 98669-0102', '../fotos/5e6ff0693e0aa.jpeg', '7ª CIA COM', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(51, 'VICTOR GABRIEL MOURA DE ARAUJO', '115.639.164-44', 'M', '', '9402863', '25/06/1999', '(81) 99207-1549', '../fotos/5e70017f19a34.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(52, 'EVANDRO BATISTA DO NASCIMENTO', '060.064.674-29', 'M', '', '6359780', '13/03/1987', '(81) 99977-2798', '../fotos/5e701e371e8fc.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(53, 'JOSE WASHINGTON DA SILVA COUTINHO', '100.839.504-86', 'M', '', '8300818', '28/03/1993', '(81) 98766-7460', '../fotos/5e70968466bfc.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(54, 'Marli Castro Da Silva', '038.196.914-21', 'M', '', '3971236', '27/03/1974', '(81) 99642-0499', '../fotos/5e70a58e08299.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(55, 'Olivio de Jesus Santos', '051.664.225-11', 'M', '', '551218022', '20/11/1989', '(81) 98307-6504', '../fotos/5e70b78b973b2.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(56, 'ISABELA TANIA DA SILVA', '710.011.064-58', 'F', '', '9807974', '26/10/2000', '(81) 98814-5199', '../fotos/5e70bb6010f5c.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(57, 'Gilson Carneiro', '762.763.094-00', 'M', '', '3263865', '23/10/1970', '(81) 98454-5512', '../fotos/5e70d707dedda.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(58, 'Jose Jailson Rodrigues', '067.194.554-86', 'M', '', '6914978', '02/03/1988', '(81) 99941-1975', '../fotos/5e70d82dd3490.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(59, 'ALLISON DA SILVA MENDONÇA', '989.424.174-34', 'M', '', '4697416', '29/06/1976', '(81) 98856-8530', '../fotos/5e70df329026d.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(60, 'VERONILDO CANDIDO DA SILVA', '577.494.694-00', 'M', '', '3549847', '12/11/1970', '(81) 99323-9847', '../fotos/5e70e05413070.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(61, 'EDNALDO DA SILVA', '072.584.474-40', 'M', '', '6466009', '02/10/1982', '(81) 98701-2519', '../fotos/5e70e0c014691.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(62, 'DAVID VIEIRA DE LIMA', '045.762.654-06', 'M', '', '6037664', '03/07/1981', '(81) 98370-2643', '../fotos/5e70ef4c3bfe4.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(63, 'RICARDO FRANCISCO DA CRUZ', '834.764.824-72', 'M', '', '4371677', '09/08/1973', '(81) 99773-1333', '../fotos/5e70f44a1f930.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(64, 'Carlos Eduardo de Rezende', '892.550.114-72', 'M', '', '4891622', '29/08/1976', '(81) 98135-9856', '../fotos/5e7102acd5ad2.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(65, 'GILDO JOÃO DOS SANTOS', '625.806.124-91', 'M', '', '3275344', '11/04/1097', '(81) 99939-6008', '../fotos/5e71056807a5a.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(66, 'Douglas Leite Silva De Brito', '048.031.444-60', 'M', '', '5495835', '10/06/1981', '(81) 98424-5212', '../fotos/5e7107ac3f8d6.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(67, 'SHIRLEY LEANDRO DA SILVA SERRA', '029.402.594-45', 'F', '', '5197441', '16/10/1976', '(81) 98772-5818', '../fotos/5e710905613e0.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(68, 'ADEMIR RAMOS DO NASCIMENTO MENEZES', '736.028.764-20', 'M', '', '3840612', '19/09/1972', '(81) 98632-1364', '../fotos/5e710b60d291d.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(69, 'Marcilio Evaristo Alves da Silva', '112.641.644-40', 'M', '', '9408074', '06/11/1995', '(81) 98339-2740', '../fotos/5e71129b05435.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(70, 'Eudes Alves da Silva', '030.715.384-30', 'M', '', '5079445', '14/12/1978', '(81) 98808-2471', '../fotos/5e7116e532e44.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(71, 'Andre Dos Santos da Silva Filho', '117.823.774-50', 'M', '', '210753482665', '22/06/1999', '(81) 98519-3906', '../fotos/5e714b4081492.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(72, 'João Marcelo Gomes Saldanha', '703.036.604-22', 'M', '', '56038780050', '22/07/1998', '(81) 99805-7146', '../fotos/5e7161f318f19.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(73, 'SEVERINO FELIX DOS SANTOS', '488.257.194-34', 'M', '', '3.073.109', '25/06/1958', '(81) 00000-0000', '../fotos/5e71fa4d4d4fa.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(74, 'HUMBERTO DA SILVA CABRAL', '768.021.754-87', 'M', '', '520629577', '14/02/1975', '(81)98324-2385', '../fotos/5e7202fbd5d6e.jpeg', '', '', NULL, 1, NULL, '20/03/2020', 1, 0, NULL),
+(75, 'ALEXANDRE RODRIGUES BRASIL FILHO ', '705.847.254-85', 'M', '', '9774696', '08/05/1997', '(81) 98684-5889', '../fotos/5e7203e5e00bf.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(76, 'GIVALDO PEDRO MARTINS JUNIOR', '703.682.684-38', 'M', '', '8873553', '30/11/1994', '(81) 98305-7505', '../fotos/5e720a7a0c169.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(77, 'JUCELIO FRANCISCO DE OLIVEIRA', '048.765.914-74', 'M', '', '00000000', '10/06/1983', '(81) 97904-7096', '../fotos/5e720af2acbe0.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(78, 'ADALBERTO ANTONIO MARINHO', '000.000.000-00', 'M', '', '4432588SDS', '16/06/1976', '(81) 98738-2401', '../fotos/5e720b55d667e.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(79, 'VLADEMIR SANTANA', '070.763.214-59', 'M', '', '125015', '16/09/1985', '(81) 99464-9097', '../fotos/5e720d3342099.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(80, 'GILIARDE PEREIRA', '046.515.894-30', 'M', '', '6197661', '11/06/1983', '(81) 98771-0178', '../fotos/5e720da676ecb.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(81, 'CAIO CESAR VERA CRUZ DE LIMA', '072.640.414-41', 'M', '', '7321681', '01/09/1990', '(81) 99899-9721', '../fotos/5e720df9d9011.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(82, 'HEITOR LUCAS ALVES DOS SANTOS', '103.451.504-73', 'M', '', '8696164', '20/02/1994', '(81) 98579-7085', '../fotos/5e720e600bb11.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(83, 'WILSON LOURENÇO DA SILVA', '192.019.583-15', 'M', '', '1974002', '26/02/1960', '(81) 98873-9714', '../fotos/5e720ec2970ee.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(84, 'EDUARDO LOURENÇO DA SILVA', '559.546.184-53', 'M', '', '2848930SDS', '29/07/1964', '(81) 99910-6661', '../fotos/5e7220c0748eb.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(85, 'JOSÉ BEZERRA DE ARRUDA', '013.357.928-05', 'M', '', '13841193', '19/12/1957', '(81) 99504-6209', '../fotos/5e722aef35399.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(86, 'DOMICIO JOÃO DE OLIVEIRA', '000.000.000-01', 'M', '', '2655721', '23/03/1964', '(81) 99451-4045', NULL, '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(87, 'FIDEL ALBUQUERQUE RAMOS', '026.384.194-43', 'M', '', '1705271', '02/08/1979', '(81) 98276-3000', '../fotos/5e724c153f889.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(88, 'MOZAR FERREIRA DA SILVA', '166.538.824-20', 'M', '', '1599421', '16/03/1958', '(81) 99488-5001', '../fotos/5e724ecbe80fc.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(89, 'ELIEL VICTOR DE ARAUJO', '133.654.484-89', 'M', '', '9831163', '10/07/2000', '(81) 98571-8038', '../fotos/5e72525a1df02.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(90, 'LINCOLN CARLOS JOAQUIM DA SILVA', '108.483.584-30', 'M', '', '9073063', '30/11/1995', '(81) 99863-1530', '../fotos/5e725aae117a2.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(91, 'JOSÉ ALEXANDRE DE FARIAS', '046.982.794-70', 'M', '', '6166034SSP', '16/11/1981', '(81) 98743-7864', '../fotos/5e726926ec688.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(92, 'JOSÉ GERMANO DA SILVA', '143.424.724-49', 'M', '', '1346419', '07/12/1940', '(81) 98817-9249', '../fotos/5e7269bd68866.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(93, 'IVONALDO FONTES FERNANDES', '242.608.194-53', 'M', '0477657134', '0477657134', '03/06/1961', '(81) 98499-8843', '../fotos/5e7273137897f.jpeg', '24 CSM NATAL', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(94, 'MARCELO DE BARROS MELO', '079.447.354-75', 'M', '', '7275853', '13/03/1986', '(81) 98275-1975', '../fotos/5e73489d559e3.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(95, 'SIDNEY BARBOSA DA SILVA', '053.150.824-23', 'M', '', '6499497', '19/09/1982', '(81) 98891-1840', '../fotos/5e735dbaa424c.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(96, 'GIVALDO BIZARRIAS TEOTONIO ALVES', '084.270.064-11', 'M', '', '7602160', '10/12/1989', '(81) 99375-3908', '../fotos/5e7361bf4dc33.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(97, 'ALEXANDRO ANTONIO DA SILVA', '858.911.694-87', 'M', '', '4040115', '01/01/1970', '(81) 98641-4475', '../fotos/5e7369f9e0720.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(98, 'GIDEONI FRANCISCO DE ARRUDA', '091.883.634-49', 'M', '', '07701063318', '14/11/1950', '(81) 99906-2651', '../fotos/5e7374c7a6b81.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(99, 'JOAO PAULO SILVA FERREIRA', '080.144.654-66', 'M', '', '7936125', '21/05/1991', '(81) 99992-7049', '../fotos/5e73759e31bf9.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(100, 'RAFAEL ANACLETO DO CARMO', '053.406.734-48', 'M', '', '6768371', '09/06/1985', '(81) 98390-0615', '../fotos/5e738a43a2db2.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(101, 'GABRIEL PAIVA', '104.994.204-38', 'M', '', '275900120', '16/11/1995', '(81) 98886-8720', '../fotos/5e7397354c69c.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(102, 'WALTER FIRMINO NETO', '202.609.891-34', 'M', '', '997476924', '17/12/1959', '(81) 99855-2224', '../fotos/5e739a2255164.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(103, 'ANDERSON LUIZ DO NASCIMENTO ALVES', '083.920.124-96', 'M', '0220319743', '0220319743', '27/09/1989', '(81) 99559-5753', '../fotos/5e739b149112f.jpeg', '7 CIA', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(104, 'VALERIO JANUARIO FEITOSA', '286.784.193-34', 'M', '1010367645', '1010367645', '01/12/1967', '(81) 99674-3865', '../fotos/5e739f26e6209.jpeg', '14 B LOG', '8', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(105, 'ANTONIO CARLOS DA SILVA ARAUJO JUNIOR', '098.453.407-50', 'M', '1229926942', '1229926942', '02/04/1984', '(35) 99183-2199', '../fotos/5e739fe638ea3.jpeg', '7 GAC', '8', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(106, 'ERASMO JOSE DA SILVA ', '487.978.124-04', 'M', '', '2720994', '25/08/1968', '(81) 99697-7420', '../fotos/5e73aebcebdf6.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(107, 'JOÃO GUIMARAES JUNIOR', '847.366.234-20', 'M', '', '3716402', '27/12/1973', '(81) 99650-6547', '../fotos/5e73b3011f164.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(108, 'JONAS DA SILVA FERREIRA', '083.871.944-92', 'M', '', '8254945', '30/11/1988', '(81) 99393-0960', '../fotos/5e73bcda72463.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(109, 'MARLON FELIPE DOS SANTOS NUNES', '104.899.564-08', 'M', '', '7669484', '10/02/1993', '(81) 98669-3515', '../fotos/5e7487bcc0972.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(110, 'JOSIVALDO VELOSO DA SILVA', '084.262.934-33', 'M', '706429479', '8178070', '18/07/1998', '(81) 98281-1757', '../fotos/5e74b7747c36b.jpeg', 'B ADM CURADO', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(111, 'LEONARDO MANOEL DA SILVA', '125.179.934-59', 'M', '', '9884969', '09/10/1998', '(81) 99710-0401', '../fotos/5e74b7f5442ea.jpeg', 'B ADM CURADO', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(112, 'ALDO ANTERO DA SILVA', '030.866.874-01', 'M', '0701891459', '3713627', '22/05/1977', '(81) 89873-7408', '../fotos/5e74c2b561b80.jpeg', '10 BDA INF MTZ', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(113, 'RODRIGO WERLLY ARAUJO DA SILVA COSTA', '115.735.094-18', 'M', '', '74764540050', '06/05/1999', '(81) 99722-5504', '../fotos/5e74c4078c31b.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(114, 'INALDO PENHA DA SILVA', '416.850.404-20', 'M', '', '2922020', '25/12/1968', '(81) 98354-5033', '../fotos/5e74c8f9dd8f5.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(115, 'VAILSON JOSE GOMES', '706.213.224-15', 'M', '0762122935', '0762122935', '23/07/1968', '(81) 98614-6979', '../fotos/5e74cb1a52e18.jpeg', '10 BDA INF MTZ', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(116, 'JOELDSON DO NASCIMENTO ROCHA', '039.376.414-16', 'M', '', '2628415', '21/05/1981', '(81) 32417-667_', '../fotos/5e74dca8d34c7.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(117, 'EDVALDO RODRIGUES DA SILVA JUNIOR', '119.225.544-56', 'M', '', '8919698', '02/09/1995', '(81) 98839-4616', '../fotos/5e74f8facfa79.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(118, 'PETRONIO LEONARDO RAMOS DED SOUZA', '064.911.634-82', 'M', '', '6827441', '10/07/1985', '(81) 99764-8724', '../fotos/5e75405d2ef5e.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(119, 'MATHEUS FIRMO DE LIMA SILVA', '070.466.211-60', 'M', '1101472056', '1101472056', '02/06/1999', '(61) 98293-6076', '../fotos/5e7542b23060b.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(120, 'DEMETRIUS ANTÃO DE FARIAS', '919.833.714-91', 'M', '', '6901083 SSP PE', '01/05/1973', '(81) 99577-8372', '../fotos/5e7664f9779cc.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(121, 'LUCIAN HELAN DE ANDRADE SANTOS', '082.158.544-43', 'M', '', '6394400097 MT PE', '01/12/1989', '(81) 98510-1643', '../fotos/5e766f6db7f56.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(122, 'VICTOR HUGO CARVALHO NOGUEIRA', '056.605.654-25', 'M', '', '6352771 SSP PE', '19/04/1987', '(81) 99639-8441', '../fotos/5e768ff83877c.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(123, 'rivaldo da silva carvalho', '195.586.004-15', 'M', '', '1800107', '20/04/1960', '(81) 98707-4467', '../fotos/5e7732af1279f.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(124, 'roicardo Wagner', '023.902.234-35', 'M', '', '5129105', '21/12/1977', '(81) 98628-3051', '../fotos/5e78a5eb40b4d.jpeg', '', '', NULL, 1, NULL, '', 0, 0, NULL),
+(125, 'Annderson Wesley', '035.793.584-56', 'M', '', '2551692', '20/02/1981', '(83) 99600-0114', '../fotos/5e78a73f00c80.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(126, 'CLEONILDO CAMPOS', '093.932.604-35', 'M', '', '73509', '11/06/1994', '(00)00000-0000', NULL, '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(127, 'hermmann emanuel silva de souza', '037.432.114-08', 'M', '', '6163684', '13/07/1983', '(81) 99140-3439', '../fotos/5e78c861740c4.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(128, 'MARCOS ANTONIO ', '686.617.624-72', 'M', '', '4590300026', '13/06/1968', '(81) 98420-3548', '../fotos/5e78cf5c56610.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL),
+(129, 'SEVERINO BATISTA', '271.222.394-20', 'M', '', '25467', '19/11/1961', '(81) 99198-7558', '../fotos/5e78db9cc4d7a.jpeg', '', '', NULL, 0, NULL, NULL, NULL, 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visitas`
+--
+
+CREATE TABLE `visitas` (
+  `id_visita` int(10) NOT NULL,
+  `id_visitante` int(5) NOT NULL,
+  `stamp_entrada` varchar(20) NOT NULL,
+  `stamp_saida` varchar(20) DEFAULT NULL,
+  `id_local` int(5) NOT NULL,
+  `modelo` varchar(20) DEFAULT NULL,
+  `cor` varchar(20) DEFAULT NULL,
+  `placa` varchar(7) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `visitas`
+--
+
+INSERT INTO `visitas` (`id_visita`, `id_visitante`, `stamp_entrada`, `stamp_saida`, `id_local`, `modelo`, `cor`, `placa`) VALUES
+(14, 13, '1584018959', '1584104152', 33, '', '', ''),
+(15, 14, '1584098895', '1584104345', 16, 'AMAROK', 'PRATA', 'OYR3909'),
+(16, 16, '1584102412', '1584118013', 21, '', '', ''),
+(17, 17, '1584103020', '1584103968', 1, 'CG', 'VERMELHA', 'PDL8106'),
+(18, 18, '1584103893', '1584108622', 29, 'PALIO', 'CINZA', 'PFU5444'),
+(19, 13, '1584104019', '1584139321', 33, '', '', ''),
+(20, 19, '1584107309', '1584110768', 19, 'LEAD', 'PRATA', 'PGI7975'),
+(21, 20, '1584108102', '1584111311', 4, 'VOYAGE', 'CINZA', 'PFL0916'),
+(22, 21, '1584114056', '1584118709', 20, 'COROLLA', 'BRANCO', 'PDG7556'),
+(23, 22, '1584115807', '1584117865', 27, 'UNO FIAT', 'VERMELHO', 'NXW3523'),
+(24, 23, '1584117814', '1584120792', 20, 'FOX', 'CINZA', 'PGE9211'),
+(25, 24, '1584118289', '1584120798', 20, '', '', ''),
+(26, 25, '1584118399', '1584120801', 20, 'HR', 'BRANCA', 'PGQ7678'),
+(27, 27, '1584180625', '1584182636', 46, 'MOTO', 'PRETA', 'PGU9590'),
+(28, 28, '1584184856', '1584188849', 23, 'KIA ', 'BRANCA', 'OYX2212'),
+(29, 29, '1584192131', '1584195723', 48, 'NISSAN LIVINA', 'PRETO', 'PEO1798'),
+(30, 31, '1584196444', '1584196975', 21, 'PALIO', 'CINZA', 'HVC4345'),
+(31, 32, '1584199940', '1584228757', 31, 'PALIO', 'PRETO', 'KJW2975'),
+(32, 33, '1584201002', '1584201697', 5, 'JEEP', 'BRANCA', 'QYB7635'),
+(33, 34, '1584202024', '1584218384', 42, 'GOL G5', 'PRATA', 'KJA4524'),
+(34, 35, '1584206386', '1584226355', 37, '-', '-', ''),
+(35, 29, '1584283409', '1584289890', 48, 'NISSAN LIVINA', 'PRETO', 'PEO9817'),
+(36, 37, '1584351328', '1584360980', 1, 'FIAT SIENA', 'CINZA', 'PFY9805'),
+(37, 38, '1584351644', '1584353926', 20, 'FIORINO BAÚ', 'BRANCA', 'OYV8062'),
+(38, 39, '1584353634', '1584385331', 31, 'HONDA BROS', 'BRANCA', 'PDO6930'),
+(39, 40, '1584354594', '1584385446', 3, 'FORD FIESTA', 'BRANCA', 'PFP3461'),
+(40, 41, '1584355690', '1584384012', 1, 'ONIX', 'BRANCA', 'QYD8411'),
+(41, 42, '1584355916', '1584356965', 20, 'VOLVO', 'BRANCA', 'QFA0947'),
+(42, 43, '1584359738', '1584375589', 1, 'FORD FIESTA', 'BRANCA', 'OYN1080'),
+(43, 44, '1584362905', '1584388803', 28, '', '', ''),
+(44, 45, '1584375346', '1584383856', 1, 'FORD CARGO 816S', 'BRANCA', 'OYX8992'),
+(45, 46, '1584381257', '1584384324', 19, 'HONDA CG 150', 'PRETA', 'PDC8988'),
+(46, 47, '1584382865', '1584383816', 3, '', '', ''),
+(47, 48, '1584383177', '1584385214', 22, '', '', ''),
+(48, 49, '1584389481', '1584443923', 25, '', '', ''),
+(49, 50, '1584394409', '1584406192', 1, 'CELTA', 'PRATA', 'ALP6110'),
+(50, 51, '1584398807', '1584399313', 4, 'HONDA FAN 125', 'VERMELHA', 'PGF7160'),
+(51, 52, '1584406181', '1584406602', 53, 'FAN 150', 'PRETO', 'PFO6072'),
+(52, 53, '1584436907', '1584469289', 22, 'FAZER 250', 'PRETA', 'PEY7775'),
+(53, 39, '1584439490', '1584469011', 31, '', '', ''),
+(54, 54, '1584440747', '1584451996', 48, '', '', ''),
+(55, 55, '1584445393', '1584456792', 5, 'HONDA BROS', 'BRANCO/VERMELHO', 'PAM6507'),
+(56, 56, '1584446347', '1584452002', 25, 'GOL G5', 'VERMELHO', 'PGW5419'),
+(57, 57, '1584453418', '1584456398', 5, 'SAVEIRO', 'BRANCO', 'PDM6585'),
+(58, 58, '1584453713', '1584454654', 19, 'HR', 'BRANCO', 'PDK5100'),
+(59, 59, '1584455522', '1584461305', 5, 'CAMINHO DO LIXO', '1719 MERCEDES', 'PDD3284'),
+(60, 19, '1584455627', '1584461321', 19, 'LEAD', 'CINZA', 'PGI7975'),
+(61, 60, '1584455791', '1584461346', 19, 'ONIX LT', 'PREOT', 'QYE7939'),
+(62, 61, '1584455902', '1584461333', 19, 'PALIO', 'BRANCO', 'KGN9448'),
+(63, 62, '1584459841', '1584460727', 22, 'SAVEIRO', 'BRANCO/VERMELHO', 'PGG3731'),
+(64, 63, '1584461065', '1584461383', 31, 'VERSA', 'BRANCA', 'PCL7682'),
+(65, 64, '1584464599', '1584464861', 5, 'RENAULT', 'AMARELO', 'PGS4406'),
+(66, 65, '1584465294', '1584465987', 5, 'SUZUKI', 'AMARELO', 'PFW8808'),
+(67, 66, '1584465886', '1584474954', 5, 'ROBUST', 'BRANCO', 'PDB4865'),
+(68, 67, '1584466205', '1584476995', 29, '', '', ''),
+(69, 68, '1584466819', '1584469297', 22, 'FIAT SIENA', 'PRETO', 'KKS6067'),
+(70, 69, '1584468656', '1584485080', 22, '', '', ''),
+(71, 70, '1584469767', '1584470694', 27, 'SAVEIRO', 'BRANCO', 'PFX8794'),
+(72, 72, '1584488979', '1584489697', 3, 'FAN 150', 'PRETO', 'PDP0H97'),
+(73, 56, '1584523047', '1584530631', 25, 'GOL G5', 'VERMELHO', 'PGW5419'),
+(74, 73, '1584528073', '1584557702', 24, '', '', ''),
+(75, 74, '1584530280', '1584533283', 53, 'KIA', 'BRANCA', 'QUD1749'),
+(76, 75, '1584530427', '1584533299', 53, '', '', ''),
+(77, 76, '1584532120', '1584564430', 18, 'S10', 'PRETA', 'KLF1804'),
+(78, 77, '1584532219', '1584564433', 18, '', '', ''),
+(79, 78, '1584532334', '1584564437', 18, '', '', ''),
+(80, 79, '1584532836', '1584537912', 18, 'CAMINHÃO', 'BRANCA', 'QYE2462'),
+(81, 80, '1584532911', '1584537907', 18, '', '', ''),
+(82, 81, '1584532996', '1584537904', 18, '', '', ''),
+(83, 82, '1584533096', '1584537900', 18, '', '', ''),
+(84, 83, '1584533216', '1584533991', 20, 'FIORINO', 'BRANCA', 'PVW3983'),
+(85, 84, '1584537833', '1584560619', 18, 'DELIVERY', 'BRANCA', 'PCD1670'),
+(86, 85, '1584540439', '1584564439', 18, 'CAMINHÃO PIPA', 'BRANCA', 'NTO6778'),
+(87, 44, '1584540536', '1584560190', 28, '', '', ''),
+(88, 59, '1584541053', '1584547748', 20, 'CAMINHÃO DO LIXO', 'BRANCA', 'PDD3284'),
+(89, 60, '1584545670', '1584564418', 19, 'ONIX', 'PRETO', 'KYE7393'),
+(90, 87, '1584548917', '1584551770', 20, 'HR ', 'BRANCA', 'PCA9653'),
+(91, 88, '1584549608', '1584557482', 18, 'DOBLO', 'BRANCA', 'PEN8082'),
+(92, 89, '1584550498', '1584555949', 4, '', '', ''),
+(93, 90, '1584552631', '1584554474', 3, '', '', ''),
+(94, 91, '1584556361', '1584564421', 5, 'MOTO FAN', 'PRETA', 'KIS5739'),
+(95, 92, '1584556540', '1584563507', 24, 'PALIO', 'AZUL', 'PGH3341'),
+(96, 62, '1584557040', '1584557793', 21, 'SAVEIRO', 'BRANCA', 'QGG3731'),
+(97, 93, '1584558907', '1584561520', 48, 'F1000', 'VERMELHA', 'BRN7772'),
+(98, 94, '1584613561', '1584650879', 18, 'CAMINHÃO', 'BRANCA', '3084'),
+(99, 95, '1584618968', '1584695299', 25, '', '', ''),
+(100, 96, '1584620052', '1584623087', 32, 'S10', 'BRANCA', 'PGE6249'),
+(101, 13, '1584621908', '1584649905', 33, '', '', ''),
+(102, 97, '1584622097', '1584649900', 33, '', '', ''),
+(103, 88, '1584622554', '1584624425', 18, '', '', ''),
+(104, 98, '1584624880', '1584626083', 7, 'SIENA', 'VINHO', 'TFA1229'),
+(105, 99, '1584625075', '1584626758', 27, '', '', ''),
+(106, 76, '1584626027', '1584627790', 18, 'S10', 'PRETA', 'KLF1804'),
+(107, 19, '1584626362', '1584629536', 19, 'HONDA', 'PRATA', 'PGI7975'),
+(108, 59, '1584627177', '1584631825', 5, 'CAMINHAO DO LIXO', 'BRANCO E AZUL', 'PDD3284'),
+(109, 65, '1584628218', '1584628451', 5, 'MOTO DOS CORREIOS', 'AMARELA', 'KYD5944'),
+(110, 100, '1584630403', '1584631552', 53, 'HR ONDA CAMINHAO', 'BRANCA', 'QYA2207'),
+(111, 44, '1584630506', '1584649882', 28, '', '', ''),
+(112, 101, '1584633692', '1584660077', 29, 'HONDA', 'AZUL E VERMELHA', 'PDE8490'),
+(113, 102, '1584634468', '1584643194', 5, 'PALIO', 'PRATA', 'KHU3292'),
+(114, 103, '1584634801', '1584641097', 5, 'HRV HONDA', 'VINHO', 'PCS8462'),
+(115, 104, '1584635716', '1584643887', 5, 'ECOSPORT', 'PRATA', 'NIE9103'),
+(116, 105, '1584635913', '1584643449', 5, 'HONDA CITI', 'CINZA', 'FTA8017'),
+(117, 64, '1584639163', '1584639462', 5, 'RENAULT', 'AMARELA', 'PGS4406'),
+(118, 106, '1584639726', '1584642417', 53, 'ONIX', 'PRATA', 'QYB4481'),
+(119, 107, '1584640797', '1584642099', 53, 'AMAROK', 'BRANCA', 'PDO4668'),
+(120, 40, '1584641418', '1584644964', 55, 'FIESTA', 'BRANCO', 'PFD3461'),
+(121, 108, '1584643334', '1584644144', 29, 'C3 CITROEN', 'PRATA', 'PFM3479'),
+(122, 109, '1584695270', '1584701398', 24, '', '', ''),
+(123, 74, '1584706101', '1584709824', 1, 'HR', 'BRANCA', 'QUD1749'),
+(124, 75, '1584706173', '1584709833', 1, 'HR', 'BRANCA', 'QUD1749'),
+(125, 110, '1584707470', '1584736180', 13, '', '', ''),
+(126, 111, '1584707608', '1584736176', 13, '', '', ''),
+(127, 112, '1584710465', '1584715459', 44, 'ARGO', 'PRETO', ''),
+(128, 19, '1584710795', '1584711257', 19, 'TOYOTA', 'PRETA', 'KKX8989'),
+(129, 114, '1584712105', '1584735509', 21, '', '', ''),
+(130, 115, '1584712523', '1584714020', 10, 'SCENIC', 'PRETO', 'KJU386'),
+(131, 40, '1584712897', '1584725323', 55, 'FIESTA', 'BRANCA', 'PFP3461'),
+(132, 21, '1584715563', '1584716583', 53, 'COROLA', 'BRANCO', 'PDG7556'),
+(133, 116, '1584717015', '1584717697', 20, 'CAMINHÃO', 'AZUL', 'OGC2202'),
+(134, 117, '1584724272', '1584725344', 19, 'FIAT ESTRADA', 'BRANCA', 'PGW6488'),
+(135, 118, '1584742525', '1584745547', 22, 'SPIN', 'VERDE', 'PGC1251'),
+(136, 119, '1584743103', NULL, 31, '', '', ''),
+(137, 120, '1584817466', '1584819921', 21, 'HB20', 'BRANCO', 'PCN2680'),
+(138, 121, '1584820117', '1584820735', 21, 'MONTANA', 'CINZA', 'PED0981'),
+(139, 122, '1584828466', '1584828884', 32, 'MOTO POP 100', 'PRETA', 'PEX4260'),
+(140, 123, '1584870221', '1584871445', 53, 'RANGER', 'PRATA', 'KLE9074'),
+(141, 124, '1584965199', NULL, 25, 'SHINERAY', 'PRETA', 'PGZ7072'),
+(142, 125, '1584965474', '1584966925', 53, 'L200', 'PRATA', 'QFA9339'),
+(143, 13, '1584968630', NULL, 38, '', '', ''),
+(144, 97, '1584968670', NULL, 38, '', '', ''),
+(145, 121, '1584970239', '1584972057', 47, 'MONTANA', 'PRATA', 'PED0981'),
+(146, 65, '1584973011', '1584974484', 1, 'BROS', 'AMARELA', 'QYD5954'),
+(147, 126, '1584973289', '1584974475', 18, 'FAN 160', 'PRETA', 'PDM3494'),
+(148, 127, '1584973959', '1584978949', 19, 'FIAT ESTRADA', 'BRANCA', 'QMK9585'),
+(149, 23, '1584974357', '1584976520', 1, 'FOX', 'PRATA', 'PGE9211'),
+(150, 59, '1584975436', '1584980432', 1, 'CAMINHAO DO LIXO', 'AZUL', 'PDD3284'),
+(151, 100, '1584975804', NULL, 53, 'CAMINHAO ', 'BRANCO', 'QYA2207'),
+(152, 128, '1584975831', NULL, 53, 'CAMINHAO', 'BRANCO', 'QYA2207'),
+(153, 121, '1584978269', '1584979023', 47, 'MONTANA', 'PRATA', 'PED0981'),
+(154, 40, '1584978609', NULL, 18, 'PFP3461', 'BRANCO', 'FIESTA'),
+(155, 129, '1584978885', '1584979682', 20, 'UNO', 'VERDE', 'KIO7584'),
+(156, 64, '1584980764', '1584981088', 53, 'DOBLO', 'AMARELO', 'PGS4406'),
+(157, 19, '1584984539', NULL, 19, 'XRE', 'CINZA', 'PCT3825');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `local`
+--
+ALTER TABLE `local`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `militar`
+--
+ALTER TABLE `militar`
+  ADD PRIMARY KEY (`id_mil`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `veiculos`
+--
+ALTER TABLE `veiculos`
+  ADD PRIMARY KEY (`id_veiculo`);
+
+--
+-- Indexes for table `visitantes`
+--
+ALTER TABLE `visitantes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `visitas`
+--
+ALTER TABLE `visitas`
+  ADD PRIMARY KEY (`id_visita`),
+  ADD KEY `id_visitante` (`id_visitante`),
+  ADD KEY `id_local` (`id_local`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `local`
+--
+ALTER TABLE `local`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+--
+-- AUTO_INCREMENT for table `militar`
+--
+ALTER TABLE `militar`
+  MODIFY `id_mil` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `veiculos`
+--
+ALTER TABLE `veiculos`
+  MODIFY `id_veiculo` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `visitantes`
+--
+ALTER TABLE `visitantes`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+--
+-- AUTO_INCREMENT for table `visitas`
+--
+ALTER TABLE `visitas`
+  MODIFY `id_visita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=158;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `visitas`
+--
+ALTER TABLE `visitas`
+  ADD CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`id_visitante`) REFERENCES `visitantes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `visitas_ibfk_2` FOREIGN KEY (`id_local`) REFERENCES `local` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
